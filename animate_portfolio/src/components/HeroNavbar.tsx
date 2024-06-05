@@ -1,11 +1,34 @@
-import InstagramIcon from '@mui/icons-material/Instagram';
+import Link from 'next/link';
+import Image from "next/image"
 
 const HeroNavbar = () => {
+    const Socials = [
+        {
+            source : "/img/instagram.svg",
+            link : "https://www.instagram.com/guncv_/"
+        },
+        {
+            source : "/img/facebook.svg",
+            link : "https://www.facebook.com/profile.php?id=100009512147281"
+        },
+        {
+            source : "/img/discord.svg",
+            link : "https://discord.com/"
+        }
+    ]
+
     return (
         <div className="w-full shadow-[#2AOE61]/50 bg-[#03001417] backdrop-blur-md fixed top-0 left-0 right-0 h-[10vh] z-[50]
             flex flex-row justify-between">
-            <div className="w-[33vw] h-full">
-
+            <div className="w-[33vw] h-full flex flex-row items-center justify-start pl-[3vw] space-x-8">
+                <Image className="w-[5vw] h-[80%]" 
+                src="/img/NavLogo.png"
+                alt="Failed To load image"
+                width={1000}
+                height={1000}/>
+                <div className="text-[20px]">
+                    Guncv Dev
+                </div>
             </div>
 
             <div className="w-[33vw] h-full flex justify-center items-center py-[2vh]">
@@ -17,9 +40,16 @@ const HeroNavbar = () => {
                 </div>
             </div>
             
-            <div className="w-[33vw] h-full flex justify-end flex-row pr-[20px]">
-                <div>
-                </div>
+            <div className="w-[33vw] h-full flex justify-end flex-row pr-[3vw] items-center space-x-6">
+                {Socials.map((social) => (
+                    <Link href={social.link} className="w-[25px] h-[80%]" target="_blank">
+                        <Image className="w-full h-full" 
+                        src={social.source}
+                        alt = "Failed to load"
+                        width = {1000}
+                        height = {1000}/>
+                    </Link>
+                ))}
             </div>
         </div>
     )
