@@ -3,11 +3,11 @@ import React from 'react';
 import Image from 'next/image';
 import { motion } from "framer-motion";
 import { SparklesIcon } from "@heroicons/react/24/solid";
-import { variantFromTop,variantFromLeft,variantFromBottom,variantFromRight } from '@/utils/motion';
+import { variantFromTop,variantFromLeft,variantFromBottom,variantFromRight } from '@/utils/Heromotion';
 
 const HeroContent = () => {
     return (
-        <div className="w-full h-full flex flex-row flex-wrap z-10 relative text-white">
+        <div className="w-screen h-screen flex flex-row flex-wrap z-10 relative text-white items-center">
             <div className="h-full w-[50vw] px-[6vw] flex flex-col justify-center space-y-[6vh]">
                 <motion.div
                     className="flex flex-row space-x-2 border-[#7042f88b] border opacity-90 

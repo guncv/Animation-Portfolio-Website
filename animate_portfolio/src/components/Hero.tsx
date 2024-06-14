@@ -3,7 +3,7 @@ import HeroNavbar from "./HeroNavbar";
 
 const Hero = () => {
     return (
-        <div className="relative flex flex-col h-full w-full">
+        <div className="relative flex flex-col h-screen w-full">
             <video
              autoPlay
              muted
