@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Projects = () => {
     return (
-        <div className="w-screen h-screen">
+        <div className="w-screen">
 
             <div className="text-center text-[50px] w-full h-[20vh]">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
@@ -14,7 +14,8 @@ const Projects = () => {
             <div className="flex flex-row justify-around flex-wrap w-full">
                     {
                         Project_information.map((image,index) => (
-                            <div className="w-[29vw] h-fit space-y-[20px] rounded-xl border-[1px] shadow-lg border-[#2A0E61]">
+                            <div className="w-[29vw] h-fit space-y-[20px] rounded-xl border-[1px] shadow-lg border-[#2A0E61]
+                            transition-transform duration-300 hover:scale-105 z-40 cursor-pointer">
                                 <Image className="w-full h-auto rounded-t-xl"
                                 alt={image.title}
                                 src={image.Image}

@@ -26,21 +26,23 @@ const Encryption = () => {
             </motion.div>
 
             <div className="h-[70vh] w-full relative flex flex-col items-center justify-center z-[20] space-y-[10px]">
-                <div className="flex flex-col items-center group cursor-pointer w-auto h-auto">
+                <div className="flex flex-col items-center group cursor-pointer w-auto h-auto z-40">
                     <Image
-                    src="/img/LockTop.png"
-                    alt="Lock Top"
-                    width={50}
-                    height={50}
-                    className="translate-y-5 transition-all duration-200 group-hover:translate-y-11"/>
-
+                        src="/img/LockTop.png"
+                        alt="Lock Top"
+                        width={50}
+                        height={50}
+                        className="translate-y-5 transition-transform duration-200 group-hover:translate-y-11"
+                    />
                     <Image
-                    src="/img/LockMain.png"
-                    alt="LockMain"
-                    width={70}
-                    height={70}
-                    className="z-10"/>
+                        src="/img/LockMain.png"
+                        alt="Lock Main"
+                        width={70}
+                        height={70}
+                        className="z-10"
+                    />
                 </div>
+
 
                 <div className="px-[15px] py-[4px] z-[20] border-[1px] border-[#7042f88b] text-gray-200 opacity-[0.7]
                     rounded-full">

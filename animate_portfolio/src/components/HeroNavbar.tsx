@@ -1,7 +1,25 @@
+'use client'
 import Link from 'next/link';
 import Image from "next/image"
+import { RefObject, useEffect } from 'react';
 
-const HeroNavbar = () => {
+interface Props {
+    aboutRef: RefObject<HTMLDivElement>;
+    skillsRef: RefObject<HTMLDivElement>;
+    projectsRef: RefObject<HTMLDivElement>;
+}
+
+const HeroNavbar = ({aboutRef, skillsRef, projectsRef} : Props) => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
+      
+    const scrollToRef = (ref: RefObject<HTMLDivElement>) => {
+        if (ref.current) {
+        ref.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     const Socials = [
         {
             source : "/img/instagram.svg",
@@ -34,9 +52,9 @@ const HeroNavbar = () => {
             <div className="w-[33vw] h-full flex justify-center items-center py-[2vh]">
                 <div className="w-full flex justify-between border border-[#7042f861] bg-[#0300145e] items-center flex-row 
                     h-full text-[15px] rounded-full px-5">   
-                    <div> About me </div>
-                    <div> Skills </div>
-                    <div> Projects </div>
+                    <div className="cursor-pointer" onClick={() => scrollToRef(aboutRef)}>About me</div>
+                    <div className="cursor-pointer" onClick={() => scrollToRef(skillsRef)}>Skills</div>
+                    <div className="cursor-pointer" onClick={() => scrollToRef(projectsRef)}>Projects</div>
                 </div>
             </div>
             
